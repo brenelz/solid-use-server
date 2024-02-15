@@ -6,13 +6,14 @@ let fileText = "File Not Loaded";
 
 const readFile = cache(async (path: string) => {
     'use server';
+    console.log('on the server');
 
     fileText = fs.readFileSync(path, 'utf-8');
 
     return fileText;
 }, 'read-file');
 
-export function FileComponent(props: { path: string }) {
+export function FileComponent(props: { path: string, children?: any }) {
     const fileText = createAsync(() => readFile(props.path));
     const [count, setCount] = createSignal(0);
 
@@ -20,6 +21,7 @@ export function FileComponent(props: { path: string }) {
         <>
             <pre>{fileText()}</pre>
             <button onClick={() => setCount(count() + 1)}>Clicks {count()}</button>
+            {props.children}
         </>
     )
 }
