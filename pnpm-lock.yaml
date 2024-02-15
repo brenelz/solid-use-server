@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@solidjs/router':
+    specifier: ^0.12.0
+    version: 0.12.0(solid-js@1.8.15)
   '@solidjs/start':
     specifier: ^0.5.7
     version: 0.5.7(solid-js@1.8.15)(vinxi@0.2.1)(vite@5.1.2)
@@ -1259,6 +1262,14 @@ packages:
   /@sindresorhus/merge-streams@2.2.1:
     resolution: {integrity: sha512-255V7MMIKw6aQ43Wbqp9HZ+VHn6acddERTLiiLnlcPLU9PdTq9Aijl12oklAgUEblLWye+vHLzmqBx6f2TGcZw==}
     engines: {node: '>=18'}
+    dev: false
+
+  /@solidjs/router@0.12.0(solid-js@1.8.15):
+    resolution: {integrity: sha512-9dyBL35T7x86RBSJBMu9jLGytBTmWQehb0uxez7TfzYtwI+v9poo2fzRbcCCrWVTQkwGD/rWvqmxUvczp2at3A==}
+    peerDependencies:
+      solid-js: ^1.8.6
+    dependencies:
+      solid-js: 1.8.15
     dev: false
 
   /@solidjs/router@0.8.4(solid-js@1.8.15):
