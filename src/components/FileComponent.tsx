@@ -4,11 +4,12 @@ import { createSignal } from "solid-js";
 
 let fileText = "File Not Loaded";
 
-const readFile = cache(async (path: string) => {
+export const readFile = cache(async (path: string) => {
     'use server';
-    console.log('on the server');
 
     fileText = fs.readFileSync(path, 'utf-8');
+
+    await new Promise(r => setTimeout(r, 2000));
 
     return fileText;
 }, 'read-file');
